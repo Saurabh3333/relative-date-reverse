@@ -80,7 +80,7 @@ module.exports = function (str) {
       let year = new Date().getFullYear() - extraYear;
       var month = new Date().getMonth();
       let extraMonth = (month - days) % 12;
-      if (extraMonth>=0) {
+      if (extraMonth >= 0) {
         month = extraMonth;
       } else {
         month = 12 + extraMonth;
