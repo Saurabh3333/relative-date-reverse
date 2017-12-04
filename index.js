@@ -86,7 +86,7 @@ module.exports = function (str) {
         month = 12 + extraMonth;
         year = year - 1;
       }
-      
+
       return [true, new Date(new Date(new Date(new Date().setFullYear(year)).setMonth(month)))];
     }
     return [true, getNewDate(-1 * parseInt(days, 10) * periods[period])];
