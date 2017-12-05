@@ -73,7 +73,9 @@ module.exports = function (str) {
       if (year < 0) {
         return 'Before B.C.';
       } else {
-        return [true, new Date(new Date().setFullYear(year))];
+        let updatedVal = new Date();
+        updatedVal.setFullYear(year);
+        return [true, updatedVal];
       }
     } else if (period === 'month') {
       let extraYear = Math.floor(days / 12);
@@ -86,7 +88,10 @@ module.exports = function (str) {
         month = 12 + extraMonth;
       }
 
-      return [true, new Date(new Date(new Date(new Date().setFullYear(year)).setMonth(month)))];
+      let updatedVal = new Date();
+      updatedVal.setFullYear(year);
+      updatedVal.setMonth(month);
+      return [true, updatedVal];
     }
     return [true, getNewDate(-1 * parseInt(days, 10) * periods[period])];
   } else if ((match = str.match(new RegExp(regexps['re2'], 'i')))) {
